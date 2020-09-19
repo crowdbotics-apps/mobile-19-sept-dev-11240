@@ -1,4 +1,14 @@
 import axios from "axios"
+import { NEW_CONNECTOR_GFGFGHF_TOKEN } from "react-native-dotenv"
+const newConnectorgfgfghf = axios.create({
+  baseURL:
+    "https://crowdbotics-slack-dev.herokuapp.com/dashboard/app/11240/storyboard/10919/",
+  headers: {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${NEW_CONNECTOR_GFGFGHF_TOKEN}`
+  }
+})
 const mobile19septAPI = axios.create({
   baseURL: "https://mobile-19-sept-dev-11240.botics.co/",
   headers: { Accept: "application/json", "Content-Type": "application/json" }
@@ -14,6 +24,24 @@ function api_v1_customtext_update(requestBody) {
 }
 function api_v1_customtext_partial_update(requestBody) {
   return mobile19septAPI.patch(`/api/v1/customtext/{id}/`, requestBody)
+}
+function api_v1_hhgjhg_list() {
+  return mobile19septAPI.get(`/api/v1/hhgjhg/`)
+}
+function api_v1_hhgjhg_create(requestBody) {
+  return mobile19septAPI.post(`/api/v1/hhgjhg/`, requestBody)
+}
+function api_v1_hhgjhg_read() {
+  return mobile19septAPI.get(`/api/v1/hhgjhg/{id}/`)
+}
+function api_v1_hhgjhg_update(requestBody) {
+  return mobile19septAPI.put(`/api/v1/hhgjhg/{id}/`, requestBody)
+}
+function api_v1_hhgjhg_partial_update(requestBody) {
+  return mobile19septAPI.patch(`/api/v1/hhgjhg/{id}/`, requestBody)
+}
+function api_v1_hhgjhg_delete() {
+  return mobile19septAPI.delete(`/api/v1/hhgjhg/{id}/`)
 }
 function api_v1_homepage_list() {
   return mobile19septAPI.get(`/api/v1/homepage/`)
@@ -74,6 +102,12 @@ export const apiService = {
   api_v1_customtext_read,
   api_v1_customtext_update,
   api_v1_customtext_partial_update,
+  api_v1_hhgjhg_list,
+  api_v1_hhgjhg_create,
+  api_v1_hhgjhg_read,
+  api_v1_hhgjhg_update,
+  api_v1_hhgjhg_partial_update,
+  api_v1_hhgjhg_delete,
   api_v1_homepage_list,
   api_v1_homepage_read,
   api_v1_homepage_update,
