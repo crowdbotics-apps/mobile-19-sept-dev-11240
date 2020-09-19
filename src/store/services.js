@@ -14,7 +14,7 @@ const newConnectorgfgfghf = axios.create({
   }
 })
 const mobile19septAPI = axios.create({
-  baseURL: "https://mobile-19-sept-dev-11240.botics.co/",
+  baseURL: "https://mobile-19-sept-dev-11240-prod.herokuapp.com/",
   headers: { Accept: "application/json", "Content-Type": "application/json" }
 })
 function api_v1_customtext_list() {
